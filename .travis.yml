@@ -9,7 +9,7 @@ jobs:
   include:
     - stage: test
       script:
-        - cd $HOME && wget https://www.apache.org/dyn/closer.lua/spark/spark-3.0.1/spark-3.0.1-bin-hadoop2.7.tgz && tar -xzf spark-3.0.1-bin-hadoop2.7.tgz
+        - cd $HOME && wget http://apachemirror.wuchna.com/spark/spark-3.0.1/spark-3.0.1-bin-hadoop2.7.tgz && tar -xzf spark-3.0.1-bin-hadoop2.7.tgz
         - cd $TRAVIS_BUILD_DIR
         - export SPARK_HOME=$HOME/spark-3.0.1-bin-hadoop2.7
         - export PYTHON_PYSPARK=python
