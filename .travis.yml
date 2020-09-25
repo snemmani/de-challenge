@@ -1,0 +1,25 @@
+language: python
+dist: xenial
+python: 3.7
+install:
+  - pip install -r requirements.txt
+stages:
+  - test
+jobs:
+  include:
+    - stage: test
+      script:
+        - cd /tmp && wget https://www.apache.org/dyn/closer.lua/spark/spark-3.0.1/spark-3.0.1-bin-hadoop2.7.tgz && tar -xzf spark-3.0.1-bin-hadoop2.7.tgz
+        - cd $TRAVIS_BUILD_DIR
+        - coverage run test.py
+        - coverage xml
+        - cd .. && sonar-scanner
+env:
+  - SPARK_HOME: /tmp/spark-3.0.1-bin-hadoop2.7
+  - PYTHON_PYSPARK: python
+  - PATH: $SPARK_HOME/bin:$PATH
+
+addons:
+  sonarcloud:
+    organization: snemmani
+

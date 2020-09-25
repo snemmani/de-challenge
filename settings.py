@@ -9,4 +9,4 @@ spark_context = SparkContext(conf=conf)
 spark_session = SparkSession(spark_context)
 
 dataset_location = "/Users/ShankarNag/Downloads/de-challenge-1/dataset"
-id_files_location = os.path.join(dataset_location, 'id_files')
+output_location = os.path.join(dataset_location, 'id_files')
