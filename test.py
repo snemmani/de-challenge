@@ -60,9 +60,3 @@ class IndexGeneratorTest(unittest.TestCase):
                     assert dict_item_value[0] in filevalue
             except StopIteration:
                 pass
-
-
-if __name__ == "__main__":
-    unittest.main(
-        testRunner=xmlrunner.XMLTestRunner(output='test-reports'),
-        failfast=False, buffer=False, catchbreak=False)

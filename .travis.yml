@@ -14,7 +14,7 @@ jobs:
         - export SPARK_HOME=$HOME/spark-3.0.1-bin-hadoop2.7
         - export PYTHON_PYSPARK=python
         - export PATH0=$SPARK_HOME/bin:$PATH
-        - coverage run test.py
+        - coverage run -m unittest test.py
         - coverage xml
         - sonar-scanner
 
