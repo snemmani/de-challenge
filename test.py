@@ -4,7 +4,6 @@ import tempfile
 import os
 import shutil
 from invertedindex.indexgenerator import IndexGenerator
-import xmlrunner
 
 
 class IndexGeneratorTest(unittest.TestCase):
