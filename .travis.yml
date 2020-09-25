@@ -11,13 +11,12 @@ jobs:
       script:
         - cd /tmp && wget https://www.apache.org/dyn/closer.lua/spark/spark-3.0.1/spark-3.0.1-bin-hadoop2.7.tgz && tar -xzf spark-3.0.1-bin-hadoop2.7.tgz
         - cd $TRAVIS_BUILD_DIR
+        - export SPARK_HOME=/tmp/spark-3.0.1-bin-hadoop2.7
+        - export PYTHON_PYSPARK=python
+        - export PATH0=$SPARK_HOME/bin:$PATH
         - coverage run test.py
         - coverage xml
-        - cd .. && sonar-scanner
-env:
-  - SPARK_HOME: /tmp/spark-3.0.1-bin-hadoop2.7
-  - PYTHON_PYSPARK: python
-  - PATH: $SPARK_HOME/bin:$PATH
+        - sonar-scanner
 
 addons:
   sonarcloud:

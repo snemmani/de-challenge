@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/snemmani/de-challenge.svg?branch=master)](https://travis-ci.org/snemmani/de-challenge)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=snemmani_de_challenge&metric=alert_status)](https://sonarcloud.io/dashboard?id=snemmani_de_challenge) 
 # Inverted index creation on a large collection of documents
 
 ## Problem Statement
