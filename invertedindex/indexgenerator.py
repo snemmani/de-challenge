@@ -60,11 +60,12 @@ class IndexGenerator:
 
     def run(self, dataset_location):
         # Verify if results directory exists
-        if not os.path.exists(dataset_location):
-            os.mkdir(dataset_location)
-
-        if len(os.listdir(dataset_location)):
+        if os.path.exists(settings.id_files_location) and len(os.listdir(settings.id_files_location)):
             raise FileExistsError('Results directory not empty, initiating exit...')
+
+        if not os.path.exists(settings.id_files_location):
+            os.mkdir(settings.id_files_location)
+
         self.generate_word_ids(dataset_location)
         self.collate_documents()
         self.create_inverted_index()
