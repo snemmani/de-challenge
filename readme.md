@@ -6,6 +6,9 @@
 Create an efficient implementation to build an inverted index of a large collection of documents.
 Detailed problem statement can be found [here](./problem-statement.pdf).
 
+## Execution and Output
+The output of the application can be found in the ipynb file [de-challenge.ipynb](./de-challenge.ipynb)
+
 ## Tech Stack used
 Python<br>
 Spark
